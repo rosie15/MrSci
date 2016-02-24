@@ -4,12 +4,14 @@ var api = require("../api/getJournal");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index');
 });
 
 //api
-router.get("/journal", function(req, res, next) {
-	api.findName(function(err, journals) {
+router.get("/journal/:name", function(req, res, next) {
+	var param = req.params.name;
+	console.log(param);
+	api.findName(param, function(err, journals) {
 		console.log(journals);
 		res.send(journals);
 	})

@@ -16,6 +16,7 @@
     "express": "~4.13.1",
     "file-loader": "^0.8.5",
     "jade": "~1.11.0",
+    "json-loader": "^0.5.4",
     "less": "^2.6.0",
     "less-loader": "^2.2.2",
     "mongoose": "^4.4.4",
