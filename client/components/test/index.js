@@ -5,9 +5,6 @@ module.exports=function() {
 			return res.json();
 		})
 		.then(function(data) {
-			console.log(data[0].name);
-			console.log(data[0].level);
+			console.log(data);
 		});
-
-	console.log(indexFactor);
 };
