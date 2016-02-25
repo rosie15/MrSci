@@ -7,6 +7,6 @@
 + N: Nodejs
  
 # prerequirements
-1 install nodejs
-2 install mongoDB
-3 install git
+1. install nodejs.
+2. install mongoDB.
+3. install git.
