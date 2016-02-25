@@ -3,31 +3,29 @@ module.exports = function(ngModule) {
 		require("./main.less");
 		return {
 			restrict: "E",
+			scope: {},
 			template: `
 				<input ng-model = "MainCtrl.queryJournal" />
 				<button ng-click="MainCtrl.getData()">查询</button>
 				<span>{{ MainCtrl.queryJournal }}</span>
 				<br>
 				<div>影响因子</div>
-				<span>{{ MainCtrl.queryJournal }}</span>
+				<span>{{ MainCtrl.data }}</span>
 			`,
 			controllerAs: "MainCtrl",
 			controller: function() {
-				this.queryJournal = "ACAD MED";
+				var $scope = this;
+				$scope.queryJournal = "ACAD MED";
 
-				this.getData = function() {
-					alert("Hello world");
-					return fetch("/journal/ACAD MED")
+				$scope.getData = function() {
+					fetch("/journal/" + $scope.queryJournal)
 						.then(function(res) {
 							return res.json();
 						})
 						.then(function(data){
-							return data;
-						})
+							$scope.data = data[0].indexfactor;
+						});
 				};
-
-				this.data = this.getData();
-				console.log(this.data);
 			}
 		}
 	})
