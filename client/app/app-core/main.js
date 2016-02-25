@@ -11,6 +11,9 @@ module.exports = function(ngModule) {
 				<br>
 				<div>影响因子</div>
 				<span>{{ MainCtrl.data }}</span>
+				<br>
+				<div>分区</div>
+				<span>{{ MainCtrl.level }}</span>
 			`,
 			controllerAs: "MainCtrl",
 			controller: function() {
@@ -24,6 +27,7 @@ module.exports = function(ngModule) {
 						})
 						.then(function(data){
 							$scope.data = data[0].indexfactor;
+							$scope.level = data[0].level;
 						});
 				};
 			}
