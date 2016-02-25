@@ -7,7 +7,6 @@ module.exports = function(ngModule) {
 			template: `
 				<input ng-model = "MainCtrl.queryJournal" />
 				<button ng-click="MainCtrl.getData()">查询</button>
-				<span>{{ MainCtrl.queryJournal }}</span>
 				<br>
 				<div>影响因子</div>
 				<span>{{ MainCtrl.data }}</span>
@@ -18,7 +17,7 @@ module.exports = function(ngModule) {
 			controllerAs: "MainCtrl",
 			controller: function() {
 				var $scope = this;
-				$scope.queryJournal = "ACAD MED";
+				$scope.queryJournal = "";
 
 				$scope.getData = function() {
 					fetch("/journal/" + $scope.queryJournal)
@@ -29,6 +28,7 @@ module.exports = function(ngModule) {
 							$scope.data = data[0].indexfactor;
 							$scope.level = data[0].level;
 						});
+					console.log("Hello");
 				};
 			}
 		}
