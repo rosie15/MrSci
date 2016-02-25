@@ -16,6 +16,7 @@ module.exports={
 		loaders: [
             { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel" },
             { test: /\.less$/, loader: "style!css!less" },
+            { test: /\css$/, exclude: /node_modules/, loader: "style!css" },
             { test: /\.(png|jpg)$/, loader: "url?limit=8192" },
             { test: /\.json$/, loader: "json" }
         ]
