@@ -12,14 +12,14 @@ module.exports = function(ngModule) {
 				<span>{{ MainCtrl.data }}</span>
 				<br>
 				<div>分区</div>
-				<span>{{ MainCtrl.level }}</span>
+				<span ng-model = "MainCtrl.level">{{ MainCtrl.level }}</span>
 			`,
 			controllerAs: "MainCtrl",
 			controller: function() {
 				var $scope = this;
-				$scope.queryJournal = "";
-
-				$scope.getData = function() {
+				$scope.queryJournal;
+				$scope.level;
+				$scope.getData = function() {					
 					fetch("/journal/" + $scope.queryJournal)
 						.then(function(res) {
 							return res.json();
@@ -27,8 +27,12 @@ module.exports = function(ngModule) {
 						.then(function(data){
 							$scope.data = data[0].indexfactor;
 							$scope.level = data[0].level;
+							console.log(data);
+							return data;
+						})
+						.then(function(){
+							console.log("succeed!");
 						});
-					console.log("Hello");
 				};
 			}
 		}
