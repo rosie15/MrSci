@@ -1,10 +1,12 @@
 module.exports = function(ngModule) {
 	ngModule.controller("MainCtrl", function($scope, $http) {
-		$scope.datatesting = "Helloworld";
-		$http.get("/journal/ANTARCT SCI")
+		$scope.journalName = "acad med";
+		$http.get("/journal/" + $scope.journalName.toUpperCase())
 			.success(function(data) {
 				$scope.journals = data;
-				console.log(data);
 			})
+		$scope.sayHello = function() {
+			alert("hello world!");
+		}
 	})
 }
