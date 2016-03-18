@@ -1,10 +1,13 @@
 doctype html
-html
+html(ng-app="myApp")
 	head
 		title MrSci
-	body(ng-app="myApp")
+	body(ng-controller="MainCtrl")
 	h1 MrSci
-	main
-	journal-cover
+	label(for="query")
+	input(id="query" ng-model="query")
+	ul
+		li(ng-repeat="journal in journals")
+			span {{ journal.name | filter: query }}
 
 	script(src="/assets/bundle.js")

@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var path = require("path");
 var api = require("../api/getJournal");
 
 /* GET home page. */
@@ -12,8 +13,8 @@ router.get("/journal/:name", function(req, res, next) {
 	var param = req.params.name;
 	console.log(param);
 	api.findName(param, function(err, journals) {
-		console.log(journals);
-		res.send(journals);
+		//res.send(journals);
+		res.sendFile(path.join(__dirname, "../data/journal.json"));
 	})
 });
 

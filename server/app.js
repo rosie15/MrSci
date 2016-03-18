@@ -30,7 +30,8 @@ if(devMode)
     app.use(webpackDevMiddleware(compiler, {
     publicPath: webpackConfig.output.publicPath
   }));
-  //webpack-hot-replacer
+ 
+//webpack-hot-replacer
   app.use(webpackHotMiddleware(compiler));
 }
 
