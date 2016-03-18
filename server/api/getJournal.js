@@ -16,7 +16,7 @@ function recordData(data) {
 		var journal = new Journal();
 		journal.name = data[i].name;
 		journal.indexfactor = data[i].indexFactor;
-		journal.subject = data[i].subject;
+		journal.subject = data[i].Subject;
 		journal.level = data[i].level;
 		journal.save();
 	}

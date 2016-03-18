@@ -13,8 +13,8 @@ router.get("/journal/:name", function(req, res, next) {
 	var param = req.params.name;
 	console.log(param);
 	api.findName(param, function(err, journals) {
-		//res.send(journals);
-		res.sendFile(path.join(__dirname, "../data/journal.json"));
+		res.send(journals);
+		//res.sendFile(path.join(__dirname, "../data/journal.json"));
 	})
 });
 

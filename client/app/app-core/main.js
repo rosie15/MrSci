@@ -7,37 +7,4 @@ module.exports = function(ngModule) {
 				console.log(data);
 			})
 	})
-	.config(['$routeProvider', function($routeProvider) {
-		$routeProvider.
-			when('/home', {
-				templateURL: "./main.html",
-				controller: "MainCtrl"
-			})
-	}])
-
-
-	// ngModule.directive("main", function() {
-	// 	require("./main.less");
-	// 	return {
-	// 		restrict: "E",
-	// 		scope: {},
-	// 		template: `
-	// 			<span>{{ MainCtrl.journal }}</span>
-	// 			<ul>
-	// 				<li>
-	// 					<p>{{ MainCtrl.journals }}</p>
-	// 				</li>
-	// 			</ul>
-	// 		`,
-	// 		controllerAs: "MainCtrl",
-	// 		controller: function($http) {
-	// 			var $scope = this;
-	// 			$scope.journal = "Helloworld";
-	// 			fetch("../../data/world.json")
-	// 				.then(function(data) {
-	// 					$scope.journals = data;
-	// 				})
-	// 		}
-	// 	}
-	// })
 }

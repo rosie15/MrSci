@@ -4,10 +4,17 @@ html(ng-app="myApp")
 		title MrSci
 	body(ng-controller="MainCtrl")
 	h1 MrSci
-	label(for="query")
+	h2 Nanjing University
+	label(for="query") please enter the journal name
 	input(id="query" ng-model="query")
+	select(ng-model="orderProp")
+		option(value="level") rank in level
+		option(value="subject") rank in subject
 	ul
-		li(ng-repeat="journal in journals")
-			span {{ journal.name | filter: query }}
+		li(ng-repeat="journal in journals | orderBy: orderProp")
+			span {{ journal.name }}
+			div {{ journal.level }}
+			div {{ journal.indexfactor }}
+			div {{ journal.subject }}
 
 	script(src="/assets/bundle.js")
