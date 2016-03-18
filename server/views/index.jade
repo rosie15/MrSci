@@ -2,12 +2,13 @@ doctype html
 html(ng-app="myApp")
 	head
 		title MrSci
+		link(rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css")
 	body(ng-controller="MainCtrl")
 	h1 MrSci
 	h2 Nanjing University
 	label(for="query") 请输入期刊的名字
 	input(ng-model="journalName")
-	button(ng-click=sayHello) search
+	button(ng-click="sayHello()" class="btn btn-default") search
 	br
 	label 请选择排序方式
 	select(ng-model="orderProp")

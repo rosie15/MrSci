@@ -6,7 +6,10 @@ module.exports = function(ngModule) {
 				$scope.journals = data;
 			})
 		$scope.sayHello = function() {
-			alert("hello world!");
+			$http.get("/journal/" + $scope.journalName.toUpperCase())
+			.success(function(data) {
+				$scope.journals = data;
+			})
 		}
 	})
 }
