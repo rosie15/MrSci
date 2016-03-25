@@ -6,36 +6,5 @@ html(ng-app="myApp")
 	body
 	h1(class="container") MrSci
 	h2(class="container") Nanjing University
-	div(ng-controller="MainCtrl" class="container")
-		div(class="row")
-			div(class="col-md-4")
-				form
-					div(class="form-group")
-						label(for="query")
-						input(ng-model="journalName" placeholder="请输入期刊名称" class="form-control" id="query")
-
-				select(ng-model="orderProp" class="form-control")
-					option(value="level") 按分区由高往低
-					option(value="subject") 按类别排序
-				br
-				button(ng-click="findJournal()" class="btn btn-primary") search
-				br
-				form
-					div(class="form-group")
-						label(for="query")
-						input(ng-model="journalSubject" placeholder="请输入期刊领域" class="form-control")
-					select(ng-model="orderProp" class="form-control")
-						option(value="level") 按分区由高往低
-						option(value="indexfactor") 按影响因子排序
-					br
-				bitton(ng-click="findSubject()" class="btn btn-primary") search
-
-			div(class="col-md-6 col-md-offset-1")
-				ul(class="list-unstyled")
-					li(ng-repeat="journal in journals | orderBy: orderProp")
-						h3(class="bg-primary") {{ journal.name }}
-						div {{ journal.level }}
-						div {{ journal.indexfactor }}
-						div {{ journal.subject }}
-
+	main
 	script(src="/assets/bundle.js")
