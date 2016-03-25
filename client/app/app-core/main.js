@@ -64,6 +64,7 @@ module.exports = function(ngModule) {
 						</div>
 					</div>
 				</div>
+				<footer></footer>
 			`,
 			controller: "MainCtrl"
 		}

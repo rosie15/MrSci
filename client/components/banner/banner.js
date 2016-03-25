@@ -3,7 +3,7 @@ module.exports = function(ngModule) {
 		return {
 			restrict: "E",
 			template: "<h1 class='container'> MrSci for Nanjing University</h2>",
-			controllerAs: "coverCtrl",
+			controllerAs: "bannerCtrl",
 			controller: function() {
 				//to do
 			}
