@@ -4,7 +4,7 @@ var data = require("../data/journal.json")
 
 module.exports = {
 	findName,
-	findIF
+	findSubject
 }
 
 //record journal data to mongodb
@@ -36,6 +36,6 @@ function findName(name, cb) {
 	Journal.find({ "name": name }, cb)
 }
 
-function findIF(cb) {
-	Journal.find({ "name": "Antarctic Science" }, cb);
+function findSubject(subject, cb) {
+	Journal.find({ "subject": subject }, cb);
 }

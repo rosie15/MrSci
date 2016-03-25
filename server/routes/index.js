@@ -18,5 +18,12 @@ router.get("/journal/:name", function(req, res, next) {
 	})
 });
 
+router.get("/journal/subject/:subject", function(req, res, next) {
+	var param = req.params.subject;
+	api.findSubject(param, function(err, journals) {
+		res.send(journals);
+	})
+})
+
 
 module.exports = router;
