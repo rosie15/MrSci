@@ -4,7 +4,7 @@ var webpack = require("webpack");
 var path = require("path");
 
 
-module.exports={
+module.exports = {
 	context: path.join(__dirname, "./client"),
 	entry: "./app.js",
 	output: {
@@ -12,7 +12,7 @@ module.exports={
 		publicPath: "/assets/",
 		filename: "bundle.js"
 	},
-	modules: {
+	module: {
 		loaders: [
             { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel" },
             { test: /\.less$/, exclude: /node_modules/, loader: "style!css!less" },

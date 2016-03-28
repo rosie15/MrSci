@@ -5,8 +5,8 @@ module.exports = function(ngModule) {
 			restrict: "E",
 			template: `
 				<div class="container bg-primary" id="footer">
-				    GOT ANY SUGGESTION?
-				    CONTACT ME VIE THE FOLLOWING WAYS
+				    <p>GOT ANY SUGGESTION?</p>
+				    <p>CONTACT ME VIE THE FOLLOWING WAYS</p>
 				</div>
 			`,
 			controllerAs: "footerCtrl",

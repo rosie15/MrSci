@@ -18,6 +18,7 @@ module.exports = function(ngModule) {
 		}
 	})
 	.directive("main", function() {
+		require("./main.less");
 		return {
 			restrict: "E",
 			template: `
@@ -52,7 +53,7 @@ module.exports = function(ngModule) {
 							<button ng-click="findSubject()" class="btn btn-primary">search</button>
 
 						</div>
-						<div class="col-md-6 col-md-offset-1">
+						<div class="col-md-6 col-md-offset-1" id="journal-list">
 							<ul class="list-unstyled">
 								<li ng-repeat="journal in journals | orderBy: orderProp">
 									<h3 class="bg-primary">{{ journal.name }}</h3>
